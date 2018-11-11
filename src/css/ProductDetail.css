@@ -1,11 +1,19 @@
 .header{
   
   		position: sticky;
-		background-color: #CCD3F7 
    		width: 100%;
 
 }
 
+
+
+.arrow{
+
+	width: 35px;
+	margin-top: 10px;
+	margin-left: 20px;
+
+}
 .h1{
 
 	font-size: 20 px;

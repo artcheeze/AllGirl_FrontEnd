@@ -1,0 +1,19 @@
+#Header{
+  background-color: #4da6ff;
+  height: 80px;
+  color:white;
+
+  -webkit-box-shadow: 2px 7px 5px -3px rgba(0,0,0,0.13);
+-moz-box-shadow: 2px 7px 5px -3px rgba(0,0,0,0.13);
+box-shadow: 2px 7px 5px -3px rgba(0,0,0,0.13);
+z-index: 3;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

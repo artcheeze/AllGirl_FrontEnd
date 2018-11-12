@@ -9,7 +9,7 @@ class Header extends Component {
         <div id="Header" className="d-flex justify-content-between w-100">
 
           <div className="d-flex align-items-center">
-          <img src='..\logo.png' style={{position:'absolute',left:'3%'}} width="15%" alt="รูปนะ"/>
+          <img src='..\logo.png' style={{position:'absolute',left:'1%'}} width="25%" alt="รูปนะ"/>
           </div>
 
           <div className="d-flex align-items-center">

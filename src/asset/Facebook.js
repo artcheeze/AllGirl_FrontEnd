@@ -29,11 +29,11 @@ class Facebook extends Component {
         if (this.state.isLoggedIn) {
             fbContent = (
                 <div>
-                    <div class="card animated bounceInLeft delay-0.5s" style={{ width: '5rem' }}>
-                        <img class="card-img-top" src={this.state.picture} alt={this.state.name} />
-                        <div class="card-body">
-                            <p class="card-text">{this.state.name}</p>
-                        </div>
+                    <div class="animated bounceInLeft delay-0.5s text-center" style={{ width: '5rem' }}>
+                        <img class="card-img-top rounded-circle" src={this.state.picture} alt={this.state.name}  />
+                       
+                            <h3 style={{color:'#395d96',marginTop:'10px'}}>{this.state.name}</h3>
+                      
                     </div>
 
                 </div>

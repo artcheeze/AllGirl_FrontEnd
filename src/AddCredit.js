@@ -23,7 +23,7 @@ class AddCredit extends Component {
     <th> <input type="text" class="form-control" id="Num1" placeholder="Numoncard" style={{width: '200px'}} />
     </th> </tr>
     
-    <tr style=""> 
+    <tr> 
       
       <th ><h2 style={{fontSize: '20px'}}>ประเภทบัตร</h2></th> 
 

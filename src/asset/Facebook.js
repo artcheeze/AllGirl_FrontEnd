@@ -25,11 +25,10 @@ class Facebook extends Component {
 
     render() {
         let fbContent;
-
+     
         if (this.state.isLoggedIn) {
             fbContent = (
                 <div>
-
                     <div class="card animated bounceInLeft delay-0.5s" style={{ width: '5rem' }}>
                         <img class="card-img-top" src={this.state.picture} alt={this.state.name} />
                         <div class="card-body">
@@ -46,7 +45,7 @@ class Facebook extends Component {
                     appId="2214975425490479"
                     fields="name,email,picture"
                     callback={this.responseFacebook}
-
+                 
                 />
             );
         }

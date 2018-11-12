@@ -30,7 +30,7 @@ componentDidMount(){
 
 
 		<div class="footer">
-        <table class="footer1">
+        <table class="footer">
         	<tbody>
            		<tr>
            		<td class="chat" ><img id="chat" alt="chat" src="chat.png"/><br/>เเชท</td>

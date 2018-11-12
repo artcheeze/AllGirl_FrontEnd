@@ -1,0 +1,42 @@
+
+      #Num1{
+ 
+          background-image:url('1.png');
+
+          background-size: 30px;
+
+          background-position: right;
+ 
+          background-repeat:no-repeat;
+      }
+      #Num2{
+ 
+          background-image:url('mastercard.png');
+          
+
+          background-size: 30px;
+
+          background-position: center;
+ 
+          background-repeat:no-repeat;
+
+          padding-left: 0px;
+      }
+       #Num3{
+
+ 
+          background-image:url('visa.png');
+
+          background-size: 30px;
+
+          background-position: center;
+ 
+          background-repeat:no-repeat;
+          padding-left: 0px;
+      }
+     #Num23{
+      margin-left: 200px;
+     }
+
+      
+    

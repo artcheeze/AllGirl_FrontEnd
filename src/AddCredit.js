@@ -12,37 +12,53 @@ class AddCredit extends Component {
       <div>
         <Header name={'ใส่เลขบัตรเครดิต'} />
        
-      <form class="form-inline">
+     <form class="form-inline">
        <div class="container-fluid">
         <div class="row text-center" style={{margin: '10px'}}>
-          <table width="100%"> 
-    <tr> <th > <h2 style={{fontSize: '18px'}}>ชื่อ - นามสกุล</h2></th> 
-    <th> <input type="text" class="form-control" id="NameSurname"  style={{width: '180px'}} /></th> </tr>
+          <table> 
+    <tr> <th > <h2 style={{fontSize: '20px'}}>ชื่อที่ปรากฎบนบัตร</h2></th> 
+    <th> <input type="text" class="form-control" id="Nameoncard" placeholder="Nameoncard" style={{width: '200px'}} /></th> </tr>
     
-    <tr> <th > <h2 style={{fontSize: '18px'}}>เบอร์</h2></th> 
-    <th> <input type="text" class="form-control" id="Telephone"  style={{width: '180px'}} />
+    <tr> <th > <h2 style={{fontSize: '20px'}}>หมายเลขบัตร</h2></th> 
+    <th> <input type="text" class="form-control" id="Num1" placeholder="Numoncard" style={{width: '200px'}} />
     </th> </tr>
-     <tr> <th > <h2 style={{fontSize: '18px'}}>รายละเอียดที่อยู่</h2></th> 
-    <th> <input type="text" class="form-control" id="address" style={{width: '180px', height: '180px'}} /></th> </tr>
     
-    <tr> <th > <h2 style={{fontSize: '18px'}}>ตำบล / แขวง</h2></th> 
-    <th> <input type="text" class="form-control" id="subdistrict"  style={{width: '180px'}} /></th> </tr>
-    <tr> <th > <h2 style={{fontSize: '18px'}}>อำเภอ / เขต</h2></th> 
-    <th> <input type="text" class="form-control" id="city" style={{width: '180px'}} /></th> </tr>
-     <tr> <th > <h2 style={{fontSize: '18px'}}>จังหวัด</h2></th> 
-    <th> <input type="text" class="form-control" id="province"  style={{width: '180px'}} /></th> </tr>
-    <tr> <th> <h2 style={{fontSize: '18px'}}>Postcode</h2></th> 
-    <th> <input type="text" class="form-control" id="Postcode" style={{width: '180px'}} /></th> </tr>
+    <tr style=""> 
+      
+      <th ><h2 style={{fontSize: '20px'}}>ประเภทบัตร</h2></th> 
+
+      <th style={{display: 'flex',width: '220px' ,marginTop:'10px'}}>
+      <input type="text" name="card" class="form-control" />
+        <div style={{marginLeft: '5px' ,display: 'flex'}}>
+          <div id="Num3"style={{width: '30px',height: '34px'}}>
+         
+        </div> 
+         <div id="Num2"style={{width: '30px',height: '34px'}}>
+            </div>
+        </div> 
+      </th>
+
+  
+  </tr>
+    
+    <tr> <th > <h2 style={{fontSize: '20px'}}>วันหมดอายุ</h2></th> 
+    <th> <input type="text" class="form-control" id="Expired" placeholder="MM/YY" style={{width: '200px'}} /></th> </tr>
+    
+    <tr> <th > <h2 style={{fontSize: '20px'}}>CVV</h2></th> 
+    <th> <input type="text" class="form-control" id="CVV" placeholder="CVV" style={{width: '200px'}} /></th> </tr>
+    <tr> <th > <h2 style={{fontSize: '20px'}}>ที่อยู่ในการวางบิล</h2></th> 
+    <th> <input type="text" class="form-control" id="Address" placeholder="Address" style={{width: '200px', height: '150px'}} /></th> </tr>
   </table>
 </div>
 <div>
-  
+  </div>
  <div align="center"><button type="submit" class="submit" style={{width: '190px', height: '50px'}} > 
- <h3 style={{fontSize: '18px',textAlign: 'center'}}> ยืนยัน </h3> </button></div>
-</div>
-</div>
+ <h3 style={{fontSize: '18px', textAlign: 'center'}}> ยืนยันการชำระเงิน </h3> </button></div>
 
-    
+
+
+
+            </div>
             </form>
          </div> 
 

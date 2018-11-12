@@ -12,7 +12,7 @@ import AddAddress from './AddAddress'; ////////   อุ้มมมมมมม
 import AddCredit from './AddCredit'; ////////    อุ้มมมมมมมมมมมมม
 
 import LogIn from './logIn'; ////////  อาทไงจะใครหละ
-ReactDOM.render(<LogIn/>, document.getElementById('root'));
+ReactDOM.render(<AddCredit/>, document.getElementById('root'));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 serviceWorker.unregister();

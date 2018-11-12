@@ -17,19 +17,35 @@ componentDidMount(){
 
   render() {
     return (
-      <div>
-        
-         <nav class="header" style={{backgroundColor: "#CCD3F7"}} >
-    		<nav class="col-xs-12 text-center" style={{backgroundColor: "#CCD3F7"}}>
-       			<img  src="arrow.png" alt="arrow" class="arrow" align="left"/>
-       			<Header name={'รายละเอียดสินค้า'} />
-     		</nav>
-  		</nav>
+    	<div>
+      
+       		<Header name={'รายละเอียดสินค้า'} />
+     	
+		<div class="productPic" align="center"> 	
+    	<img id="productImage" align="center" src="hoodie.jpg" alt="เสื้อฮู้ดผ้าหนา" / >		
+		</div>
 
 
 
 
-      </div>
+
+		<div class="footer">
+        <table class="footer">
+        	<tbody>
+           		<tr>
+           		<td class="chat" ><img id="chat" alt="chat" src="chat.png"/><br/>เเชท</td>
+             		 <td class="buyProduct" >ซื้อสินค้า</td>
+           		</tr>
+        	</tbody>
+      	</table>
+      	</div>
+
+
+
+	
+		</div>
+
+
 
     );
   }

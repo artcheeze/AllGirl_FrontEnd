@@ -6,7 +6,6 @@
 }
 
 
-
 .arrow{
 
 	width: 35px;
@@ -18,4 +17,40 @@
 
 	font-size: 20 px;
 	text-align: center;
+}
+
+#productImage{
+	width: 300px;
+	height: 300px;
+
+}
+
+#chat{
+
+	width: 20px;
+	padding-top: 7px;
+
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   
+}
+.chat{
+
+   text-align: center;
+   background-color: #CCCCFF;
+   width: 30%;
+  
+}
+
+.buyProduct{
+  background-color: #4da6ff;
+  color: white;
+  font-size: 15 px;
+  text-align: center;
+  padding-top: 6px;
+  
 }

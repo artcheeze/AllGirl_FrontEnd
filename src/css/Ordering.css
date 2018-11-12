@@ -1,0 +1,46 @@
+ #productImage{
+     width: 120px;
+     height: 120px;
+     margin-left: 20px;
+     margin-top: 10px;
+ }
+ 
+#productName{
+    font-size: 20px; 
+    font-weight: bold; 
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#productDetail{
+    font-size: 16px; 
+    margin-left: 20px;
+}
+
+#detail{
+    margin-left: 50px;
+}
+
+#button1{
+    margin-left: 20px;
+}
+
+#button2{
+    background-color: #FF3434;
+    color: #ffffff;
+    border: none;
+}
+
+#button3{
+    background-color: #FF3434;
+    color: #ffffff;
+    border: none;
+    margin-left: 20px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;    
+ }

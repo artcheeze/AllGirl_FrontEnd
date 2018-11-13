@@ -18,7 +18,7 @@ componentDidMount(){
       <div>
         <Header name={'สินค้าทั้งหมด'} />
 
-        <body>
+        {/* <body>
 
 
 
@@ -62,7 +62,7 @@ componentDidMount(){
           	
          	
 				<p> 
-    				<img id="productImage" align="center" src="jeans.jpeg" alt="กางเกงยีนส์สตรี" width="300" height="300"  >
+    				<img id="productImage" align="center" src="jeans.jpeg" alt="กางเกงยีนส์สตรี" width="300" height="300"  />
 				</p>
 			</div>
 			</div>
@@ -152,7 +152,7 @@ componentDidMount(){
 
 </table>
  
-</div>
+</div> */}
 
 
       </div>

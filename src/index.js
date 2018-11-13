@@ -14,11 +14,7 @@ import AddCredit from './AddCredit'; ////////    อุ้มมมมมมม�
 
 import Paymentation from './Paymentation'; ////////   อาททททททททททททททททท
 import LogIn from './logIn'; ////////  อาทไงจะใครหละ
-<<<<<<< HEAD
-ReactDOM.render(< Paymentation />, document.getElementById('root'));
-=======
-ReactDOM.render(<App/>, document.getElementById('root'));
->>>>>>> 8c731f0ac3a5825f61b6cdaec32465f8c8c6c5ba
+ReactDOM.render(<Ordering/>, document.getElementById('root'));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 serviceWorker.unregister();

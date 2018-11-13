@@ -18,144 +18,108 @@ componentDidMount(){
       <div>
         <Header name={'สินค้าทั้งหมด'} />
 
-        <body>
-
-
-
-
-  
- <header class="header">
-  <nav class="header" >
    
-    <nav class="col-xs-12 text-center" style="background-color: #CCD3F7  ">
-       
-       
-          <h1 style="font-size: 20px " align="center">รายการสินค้า</h1>     
-     </nav>
-  </nav>
-</header>
+
+
+
+
 
 
 
 <div class="container-fluid" >
 
-<table class="showProduct" align="center">
-	<tbody>
-		 <tr>
-          <td class="productRow" >
-          	
-   
-				<p> 
-    				<img id="productImage" align="center" src="shoes.jpg" alt="รองเท้ากีฬาผ้าใบ" width="300" height="300"  >
-				</p>
-			</div>
-			  </div>
-          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >รองเท้ากีฬาผ้าใบ</h2>
-          <h2 id="productPrice" class="productPrice" style="font-size: 16px ; font-weight: bold  "  >฿ 990</h2>
-
-  
-  </div>
-
-            </td>
-
-                       <td class="productRow" >
-          	
-         	
-				<p> 
-    				<img id="productImage" align="center" src="jeans.jpeg" alt="กางเกงยีนส์สตรี" width="300" height="300"  >
-				</p>
-			</div>
-			</div>
-          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >กางเกงยีนส์สตรี</h2>
-          <h2 id="productPrice" class="productP
-          rice" style="font-size: 16px ; font-weight: bold  "  >฿ 490</h2>
-        
-    
-  </div>
-
-            </td>
-        
-
-        </tr>
+<table class="show-product" align="center">
+<tr>
+<td>
+          <div class="card" style={{width: '18rem'}}> 
+             <img class="productImage" src="shoes.jpg" alt="รองเท้ากีฬาผ้าใบ"></img>
+                <div class="card-body">
+                   <h5 class="productName"> รองเท้ากีฬาผ้าใบ </h5>
+                    <p class="productPrice">฿ 990</p>
+                    <a href="#" class="btn btn-primary">ดูรายละเอียดสินค้า</a>
+                 </div>
+          </div>
+</td>
 
 
-		 <tr>
-          <td class="productRow" >
-          	
-         	
-				<p> 
-    				<img id="productImage" align="center" src="bag.png" alt="กระเป่าเป้สะพายหลังสีเหลืองสดใส" width="300" height="300"  >
-				</p>
-			</div>
-          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >กระเป่าเป้สะพายหลังสีเหลืองสดใส</h2>
-          <h2 id="productPrice" class="productPrice" style="font-size: 16px ; font-weight: bold  "  >฿ 790</h2>
-         
-    </div>
-  </div>
+<td>
 
-            </td>
+            <div class="card" style={{width: '18rem'}}> 
+             <img class="productImage" src="jeans.jpeg" alt="กางเกงยีนส์สตรี"></img>
+                <div class="card-body">
+                   <h5 class="productName"> กางเกงยีนส์สตรี </h5>
+                    <p class="productPrice">฿ 490</p>
+                    <a href="#" class="btn btn-primary">ดูรายละเอียดสินค้า</a>
+                 </div>
+          </div>
 
-                       <td class="productRow" >
-          	
-         	
-				<p> 
-    				<img id="productImage" align="center" src="shirt.jpg" alt="เสื้อยืดสีพื้น" width="300" height="300"  >
-				</p>
-			</div>
-          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >เสื้อยืดสีพื้น</h2>
-          <h2 id="productPrice" class="productPrice" style="font-size: 16px ; font-weight: bold  "  >฿ 150</h2>
-         
-    </div>
-  </div>
+</td>
+</tr>
 
-            </td>
-        
-
-        </tr>
-
- 		 <tr>
-          <td class="productRow" >
-          	
-         	
-				<p> 
-    				<img id="productImage" align="center" src="hoodie.jpg" alt="เสื้อฮู้ดผ้าหนา" width="300" height="300"  >
-				</p>
-			</div>
-          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >เสื้อฮู้ดผ้าหนา</h2>
-          <h2 id="productPrice" class="productPrice" style="font-size: 16px ; font-weight: bold  "  >฿ 1,190</h2>
-          
-    </div>
-  </div>
-
-            </td>
-
-                       <td class="productRow" >
-          	
-         	
-				<p> 
-    				<img id="productImage" align="center" src="longSleeveShirst.png" alt="เสื้อยืดแขนยาว" width="300" height="300"  >
-				</p>
-			</div>
-          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >เสื้อยืดแขนยาว</h2>
-          <h2 id="productPrice" class="productPrice" style="font-size: 16px ; font-weight: bold  "  >฿ 990</h2>
-          
-    </div>
-  </div>
- 
-            </td>
-        
-
-        </tr>
+<tr>
+<td>
+          <div class="card" style={{width: '18rem'}}> 
+             <img class="productImage" src="shoes.jpg" alt="รองเท้ากีฬาผ้าใบ"></img>
+                <div class="card-body">
+                   <h5 class="productName"> รองเท้ากีฬาผ้าใบ </h5>
+                    <p class="productPrice">฿ 990</p>
+                    <a href="#" class="btn btn-primary">ดูรายละเอียดสินค้า</a>
+                 </div>
+          </div>
+</td>
 
 
-	</tbody>
+<td>
+
+            <div class="card" style={{width: '18rem'}}> 
+             <img class="productImage" src="bag.png" alt="กระเป่าเป้สะพายหลังสีเหลืองสดใส"></img>
+                <div class="card-body">
+                   <h5 class="productName"> กระเป่าเป้สะพายหลังสีเหลืองสดใส </h5>
+                    <p class="productPrice">฿ 790</p>
+                    <a href="#" class="btn btn-primary">ดูรายละเอียดสินค้า</a>
+                 </div>
+          </div>
+
+</td>
+</tr>
+
+<tr>
+<td>
+          <div class="card" style={{width: '18rem'}}> 
+             <img class="productImage" src="shirt.jpg" alt="เสื้อยืดสีพื้น"></img>
+                <div class="card-body">
+                   <h5 class="productName"> เสื้อยืดสีพื้น </h5>
+                    <p class="productPrice">฿ 150</p>
+                    <a href="#" class="btn btn-primary">ดูรายละเอียดสินค้า</a>
+                 </div>
+          </div>
+</td>
+
+
+<td>
+
+            <div class="card" style={{width: '18rem'}}> 
+             <img class="productImage" src="hoodie.jpg" alt="เสื้อฮู้ดผ้าหนา"></img>
+                <div class="card-body">
+                   <h5 class="productName"> เสื้อฮู้ดผ้าหนา </h5>
+                    <p class="productPrice">฿ 1,190</p>
+                    <a href="#" class="btn btn-primary">ดูรายละเอียดสินค้า</a>
+                 </div>
+          </div>
+
+</td>
+</tr>
+
 
 </table>
+
+  </div>    
+  </div>    
+      
+   
+
+
  
-</div>
-
-
-      </div>
     );
   }
 }

@@ -52,11 +52,50 @@
  #productQuantity1{
      margin-top: 20px;
      margin-left: 40px;
+     font-size: 16px; 
  }
 
  #productQuantity2{
     margin-top: 20px;
     margin-left: 20px;
+    font-size: 16px; 
 }
 
- 
+#productSize{
+    font-size: 16px; 
+    margin-left: 40px;
+}
+
+hr{
+    border-color: black;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    
+}
+
+#price{
+    margin-left: 40px;
+}
+
+#promotionCode{
+    margin-left: 40px;
+    font-size: 16px;
+}
+
+#textCheckCode{
+    font-size: 14px;
+}
+
+#btnCheckCode{
+    margin-right: 20px;
+}
+
+#totalPrice{
+    margin-left: 40px;
+}
+
+#btnPayment{
+    margin-left: 82px;
+}

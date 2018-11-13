@@ -2,19 +2,20 @@
      width: 120px;
      height: 120px;
      margin-left: 20px;
-     margin-top: 10px;
+     margin-top: 20px;
  }
  
 #productName{
-    font-size: 20px; 
+    font-size: 18px; 
     font-weight: bold; 
-    margin-left: 20px;
-    margin-top: 10px;
+    line-height: 15px;
+    margin-top: 24px;
 }
 
 #productDetail{
     font-size: 16px; 
-    margin-left: 20px;
+    margin-left: 0px;
+    line-height: 7px;
 }
 
 #detail{
@@ -22,7 +23,10 @@
 }
 
 #button1{
-    margin-left: 20px;
+    margin-inline-start: 20px;
+    margin-top: 22px;
+    height: 20px;
+    line-height: 7px;
 }
 
 #button2{
@@ -44,3 +48,15 @@
     bottom: 0;
     width: 100%;    
  }
+
+ #productQuantity1{
+     margin-top: 20px;
+     margin-left: 40px;
+ }
+
+ #productQuantity2{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+ 

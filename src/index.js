@@ -11,8 +11,10 @@ import Ordering from './Ordering'; ////////    พลอยยยยยยยย
 import AddAddress from './AddAddress'; ////////   อุ้มมมมมมมมมมมมม
 import AddCredit from './AddCredit'; ////////    อุ้มมมมมมมมมมมมม
 
+
+import Paymentation from './Paymentation'; ////////   อาททททททททททททททททท
 import LogIn from './logIn'; ////////  อาทไงจะใครหละ
-ReactDOM.render(<LogIn/>, document.getElementById('root'));
+ReactDOM.render(< Paymentation />, document.getElementById('root'));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 serviceWorker.unregister();

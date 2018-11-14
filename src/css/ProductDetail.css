@@ -41,7 +41,7 @@
 .chat{
 
    text-align: center;
-   background-color: #CCCCFF;-
+   background-color: #CCCCFF;
    width: 30%;
   
 }
@@ -62,5 +62,13 @@
 	font-weight: bold;;
 
 }
+
+.image{
+	text-align: center;
+	height: 250px;
+}
+	
+	
+	
 
 

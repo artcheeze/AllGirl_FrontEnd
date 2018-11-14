@@ -41,7 +41,7 @@
 .chat{
 
    text-align: center;
-   background-color: #CCCCFF;
+   background-color: #CCCCFF;-
    width: 30%;
   
 }
@@ -54,3 +54,13 @@
   padding-top: 6px;
   
 }
+
+
+
+.productName{
+	font-size: 16px;
+	font-weight: bold;;
+
+}
+
+

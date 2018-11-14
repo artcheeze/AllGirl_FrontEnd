@@ -6,13 +6,23 @@ import './css/ProductDetail.css'
 class ProductDetail extends Component {
 
 
-detail = {
+state = {
+
 	DataArray:[]
 }
 
 componentDidMount(){
-	fetch('http://localhost:8080/ProductDetail').then(res => console.log())
+
+	fetch('http://localhost:8080/ProductDetail')
+	.then(res => res.Json())
+	.then(resJson =>{
+		this.setState({
+			isLoaded: true
+		})
+	});
 }
+
+
 
 
   render() {
@@ -21,13 +31,6 @@ componentDidMount(){
       
        		<Header name={'รายละเอียดสินค้า'} />
      	
-		<div class="productPic" align="center"> 	
-    	<img id="productImage" align="center" src="hoodie.jpg" alt="เสื้อฮู้ดผ้าหนา" / >		
-		</div>
-
-
-
-
 
 		<div class="footer">
         <table class="footer">

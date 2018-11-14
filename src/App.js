@@ -18,8 +18,12 @@ componentDidMount(){
       <div>
         <Header name={'สินค้าทั้งหมด'} />
 
+<<<<<<< HEAD
    
 
+=======
+        {/* <body>
+>>>>>>> master
 
 
 
@@ -103,6 +107,100 @@ componentDidMount(){
 
    </div>
 
+<<<<<<< HEAD
+=======
+  
+  </div>
+
+            </td>
+
+                       <td class="productRow" >
+          	
+         	
+				<p> 
+    				<img id="productImage" align="center" src="jeans.jpeg" alt="กางเกงยีนส์สตรี" width="300" height="300"  />
+				</p>
+			</div>
+			</div>
+          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >กางเกงยีนส์สตรี</h2>
+          <h2 id="productPrice" class="productP
+          rice" style="font-size: 16px ; font-weight: bold  "  >฿ 490</h2>
+        
+    
+  </div>
+
+            </td>
+        
+
+        </tr>
+
+
+		 <tr>
+          <td class="productRow" >
+          	
+         	
+				<p> 
+    				<img id="productImage" align="center" src="bag.png" alt="กระเป่าเป้สะพายหลังสีเหลืองสดใส" width="300" height="300"  >
+				</p>
+			</div>
+          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >กระเป่าเป้สะพายหลังสีเหลืองสดใส</h2>
+          <h2 id="productPrice" class="productPrice" style="font-size: 16px ; font-weight: bold  "  >฿ 790</h2>
+         
+    </div>
+  </div>
+
+            </td>
+
+                       <td class="productRow" >
+          	
+         	
+				<p> 
+    				<img id="productImage" align="center" src="shirt.jpg" alt="เสื้อยืดสีพื้น" width="300" height="300"  >
+				</p>
+			</div>
+          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >เสื้อยืดสีพื้น</h2>
+          <h2 id="productPrice" class="productPrice" style="font-size: 16px ; font-weight: bold  "  >฿ 150</h2>
+         
+    </div>
+  </div>
+
+            </td>
+        
+
+        </tr>
+
+ 		 <tr>
+          <td class="productRow" >
+          	
+         	
+				<p> 
+    				<img id="productImage" align="center" src="hoodie.jpg" alt="เสื้อฮู้ดผ้าหนา" width="300" height="300"  >
+				</p>
+			</div>
+          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >เสื้อฮู้ดผ้าหนา</h2>
+          <h2 id="productPrice" class="productPrice" style="font-size: 16px ; font-weight: bold  "  >฿ 1,190</h2>
+          
+    </div>
+  </div>
+
+            </td>
+
+                       <td class="productRow" >
+          	
+         	
+				<p> 
+    				<img id="productImage" align="center" src="longSleeveShirst.png" alt="เสื้อยืดแขนยาว" width="300" height="300"  >
+				</p>
+			</div>
+          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >เสื้อยืดแขนยาว</h2>
+          <h2 id="productPrice" class="productPrice" style="font-size: 16px ; font-weight: bold  "  >฿ 990</h2>
+          
+    </div>
+  </div>
+ 
+            </td>
+        
+>>>>>>> master
 
        </td>
   </tr>
@@ -112,6 +210,10 @@ componentDidMount(){
      </div>
 
  
+<<<<<<< HEAD
+=======
+</div> */}
+>>>>>>> master
 
   </div>    
       

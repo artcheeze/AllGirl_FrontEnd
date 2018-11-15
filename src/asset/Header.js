@@ -17,13 +17,19 @@ class Header extends Component {
           </div>
           
           <div class="p-2 bd-highlight text-center">
-          <img src='..\logo.png' style={{marginTop:'-2%'}}width="50%" alt="รูปนะ"/>
+          <img src='..\logo2.png' style={{marginTop:'-2%'}}width="50%" alt="รูปนะ"/>
             <h5 style={{marginTop:'-2%'}}>{name}</h5>
           </div>
 
 
-          <div class="p-2 bd-highlight align-items-center">
-            <img class="rounded-circle" src={this.props.pic} alt="asdasd" />
+          <div class="p-2 bd-highlight align-items-center" style={{marginTop:'5px',borderColor:'blue'}}>
+          {
+            this.props.pic === undefined ? 
+            <FaUserSecret style={{fontSize:'35px',marginTop:'5px',marginRight:'10px'}}/>
+            :
+            <img  class="rounded-circle" src={this.props.pic} alt="asdasd" />
+          }
+           
           </div>
 
 

@@ -13,7 +13,10 @@ class App extends Component {
     prodId: "",
     name: "",
     userPic: "",
-    prodPic: []
+    prodPic: [],
+
+
+    
 
   }
   goAway(val) {

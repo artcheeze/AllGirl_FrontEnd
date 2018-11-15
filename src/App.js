@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './asset/Header'
-import { FaHeart,FaStar, FaStarHalf,FaMoneyBillWave } from 'react-icons/fa';
+import { FaHeart, FaStar, FaStarHalfAlt, FaMoneyBillWave } from 'react-icons/fa';
 import './css/App.css';
 import { Route } from "react-router-dom";
 import ProductDetail from './ProductDetail';
@@ -10,80 +10,96 @@ class App extends Component {
   state = {
     DataArray: [],
     clicked: false,
-    prodId:"",
-    name:""
-    
+    prodId: "",
+    name: "",
+    userPic: "",
+    prodPic: []
+
   }
-  goAway(val){
-    setTimeout(()=>{
+  goAway(val) {
+    setTimeout(() => {
       this.setState({
         prodId: val,
         clicked: true
       })
 
-    },300)
-   
+    }, 300)
+
   }
   componentDidMount() {
-    fetch('http://35.186.145.63:8080/Product').then(res => res.json()).then(j => {
+   
+      fetch('http://localhost:8080/Product').then(res => res.json()).then(j => {
 
-    j.forEach(el => {
+        j.forEach(e =>{
+          fetch('http://localhost:8080/productdetail/').then(ress => ress.json()).then(d => {
+            d.forEach(dd=>{
+
+              if(e.prodId === dd.prodId){
+                var cont = (
+
+                  <div class="card" id="cardClick" style={{ width: '12rem', height: '17rem', margin: '5px' }} onClick={() => this.goAway(e.prodId)}>
       
-      var cont = (
-        
-        <div class="card" id="cardClick" style={{ width: '12rem', height: '17rem', margin: '5px'}} onClick={() => this.goAway(el.prodId)}>
-       
-          <img class="card-img-top animated bounceIn" src="https://beebom.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg" alt="Card image cap" />
-          
-          <div class="card-body">
-            <h4 class="card-text">{el.prodName}</h4>
-            <h5 class="card-text text-success"><FaMoneyBillWave/> {el.prodPrice} บาท</h5>
-            
-          </div>
-          
-          <div class="d-flex flex-wrap" style={{position:'relative',margin:'10px'}}>
-          <p class="text-danger" style={{fontSize:'13px'}}><FaHeart/> 580 </p>
-          <p class="text-warning" style={{fontSize:'13px',marginLeft:'30%',marginTop:'-1%'}}><FaStar/><FaStar/><FaStar/><FaStarHalf/></p>
-          </div>
-         
-        </div>
-      )
+                    <img class="card-img-top animated bounceIn" alt="Card image cap" id="imgAppCard" src={dd.prodImage} />
+      
+                    <div class="card-body">
+                      <h5 class="card-text" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{e.prodName}</h5>
+                      <h5 class="card-text text-success"><FaMoneyBillWave /> {e.prodPrice} บาท</h5>
+                      <p class="card-text text-secondary" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',fontSize:'4px' }}>{dd.prodDetail}</p>
+      
+                    </div>
+      
+                    <div class="d-flex flex-wrap" style={{ position: 'absolute', top: '90%', left: '9%' }}>
+                      <p class="text-danger" style={{ fontSize: '13px' }}><FaHeart /> {Math.floor(Math.random() * Math.floor(999))} </p>
+                      <p class="text-warning" style={{ fontSize: '13px', marginTop: '-1%' }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FaStar /><FaStar /><FaStar /><FaStarHalfAlt /></p>
+                    </div>
+      
+                  </div>
+                )
+      
+                this.setState({ DataArray: this.state.DataArray.concat(cont) });
+             
+              }
 
-      this.setState({DataArray: this.state.DataArray.concat(cont)});
 
-    });
-     
-    })
+            })
+             
+          })
+
+        })
+    
+      })
+
   }
 
   render() {
     return (
-      
-      <div style={{backgroundColor:'#efefef'}} >
+
+      <div style={{ backgroundColor: '#efefef' }} >
+
         {
           this.state.clicked ?
-          <Route path="/" component={() => <ProductDetail id={this.state.prodId} />} />
-          :
-          <div>
-         
-          <Header name={'สินค้าทั้งหมด'} />
-         
-        
-           <div class="d-flex flex-wrap justify-content-center"style={{marginBottom:'20%'}} >
-           
-          </div>
-          <div class="d-flex flex-wrap justify-content-center"  >
-         
-            {
-              this.state.DataArray.map(e=>{return e})
-            }
-            
-          </div>
-        </div>
+            <Route path="/" component={() => <ProductDetail pic={this.props.pic} id={this.state.prodId} />} />
+            :
+            <div>
+
+              <Header name={'สินค้าทั้งหมด'} pic={this.props.pic} />
+
+
+              <div class="d-flex flex-wrap justify-content-center" style={{ marginBottom: '20%' }} >
+
+              </div>
+              <div class="d-flex flex-wrap justify-content-center"  >
+
+                {
+                  this.state.DataArray.map(e => { return e })
+                }
+
+              </div>
+            </div>
         }
 
       </div>
-     
+
 
 
 

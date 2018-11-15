@@ -15,10 +15,11 @@ import AddCredit from './AddCredit'; ////////    อุ้มมมมมมม�
 
 import Paymentation from './Paymentation'; ////////   อาททททททททททททททททท
 import LogIn from './logIn'; ////////  อาทไงจะใครหละ
+import FB from './asset/Facebook'; ////////  อาทไงจะใครหละ
 
 const AppWithRouter = () => (
     <BrowserRouter>
-      <App />
+      <App/>
     </BrowserRouter>
   )
 ReactDOM.render(<AppWithRouter/>, document.getElementById('root'));

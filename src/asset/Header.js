@@ -1,23 +1,39 @@
 import React, { Component } from 'react';
 import './header.css';
+import { FaUserSecret } from 'react-icons/fa';
 
 class Header extends Component {
   render() {
-    let {name} = this.props
+    let { name } = this.props
     return (
-      <div style={{position:'fixed',width:'100%',zIndex:10}}>
-        <div id="Header" className="d-flex justify-content-between w-100">
+      <div style={{ position: 'fixed', width: '100%', zIndex: 10 }}>
+       
 
-          <div className="d-flex align-items-center">
-          <img src='..\logo.png' style={{position:'absolute',left:'38%',top:'0px'}} width="25%" alt="รูปนะ"/>
+        <div id="Header" class="d-flex bd-highlight justify-content-center" >
+
+
+          <div class="p-2 bd-highlight ">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          
+          <div class="p-2 bd-highlight text-center">
+          <img src='..\logo.png' style={{marginTop:'-2%'}}width="50%" alt="รูปนะ"/>
+            <h5 style={{marginTop:'-2%'}}>{name}</h5>
           </div>
 
-          <div className="d-flex align-items-center">
-          <h5 style={{position:'relative',top:'20%'}}>{name}</h5>
+
+          <div class="p-2 bd-highlight align-items-center">
+            <img class="rounded-circle" src={this.props.pic} alt="asdasd" />
           </div>
 
-          <div className="d-flex align-items-center">
-          </div>
+
+
+
+
+
+
+
+
 
         </div>
 

@@ -23,12 +23,15 @@ class Paymentation extends Component {
 
   }
  
-
+  handleSubmit(event) {
+    console.log(event.target.value)
+  }
+  ren
   render() {
     return (
 
       <div>
-        <form>
+        <form enctype="application/json" action="http://localhost:8080/Payment/p" method="post">
           <input type="submit" value="pay" id="checkout-button" ></input>
         </form>
 

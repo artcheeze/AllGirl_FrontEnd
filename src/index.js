@@ -19,7 +19,7 @@ import FB from './asset/Facebook'; ////////  อาทไงจะใครห�
 
 const AppWithRouter = () => (
     <BrowserRouter>
-      <AddAddress/>
+      <App/>
     </BrowserRouter>
   )
 ReactDOM.render(<AppWithRouter/>, document.getElementById('root'));

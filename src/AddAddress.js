@@ -5,19 +5,25 @@ import { FaArrowAltCircleLeft, FaExclamationCircle, FaAngleDoubleRight } from 'r
 import Ordering from './Ordering';
 
 
+
 class AddAddress extends Component {
   state = {
     cikBack: false,
-    address: ""
+    address: "",
+    totaly:0
   }
 
   componentDidMount() {
+    let a = this.props.total+"00"
+    let b = parseInt(a);
+    this.setState({totaly: b})
+    
     setTimeout(() => {
       var { OmiseCard } = window
 
       OmiseCard.configure({
         publicKey: 'pkey_test_5dwrs15v3vx4cildg78',
-        amount: this.props.total,
+        amount: b,
         currency:'thb',
         image:'https://lh4.googleusercontent.com/GycN66ZMw_Hz3JEmoHHeU4F3AlpnL2na3SXPHDLAPW5UlXuQU3yxbsKMBviOCpLT9FxM65QcDgmMcQ=w1600-h799'
       });
@@ -34,29 +40,33 @@ class AddAddress extends Component {
   }
 
   checkOut() {
+ 
 
+    fetch('http://localhost:8080/Orders/addOrder', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        prodId: this.props.id,
+        totalPrice: this.props.total,
+        promoCode: this.props.code,
+        quantity: this.props.quantity,
+        paymentStatus: "Paid",
+        address: this.state.address
 
-    // fetch('http://localhost:8080/Orders/addOrder', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({
-    //     prodId: this.props.id,
-    //     totalPrice: this.props.total,
-    //     promoCode: this.props.code,
-    //     quantity: this.props.quantity,
-    //     paymentStatus: "undone",
-    //     address: this.state.address
-
-    //   })
-    // }).then(res => console.log(res))
+      })
+    }).then(res => console.log(res))
 
 
 
   }
-
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(event)
+    
+}
   render() {
     return (
 
@@ -94,11 +104,12 @@ class AddAddress extends Component {
                   <p class="text-secondary"><FaExclamationCircle /> ระบบอยู่ระหว่างการพัฒนา - UX/UI อาจยังไม่สมบูรณ์ที่สุด และ ระบบยังไม่สามารถบันทึกที่อยู่ได้</p>
                   <p class="text-secondary"><FaExclamationCircle /> เนื่องจากระบบยังไม่สมบูรณ์ที่สุด ทางเราไม่มีนโยบายเก็บข้อมูลบัตรของผู้ใช้งาน จะใช้การตัดเงินจากระบบตัวแทนภายนอกที่มีความปลอดภัยสูง เช่น Omise </p>
                   
-                  
-                  <form >
+                  <iframe name="votar" style={{display:'none'}}></iframe>
+                  <form action="http://localhost:8080/Payment" method="POST" target="votar">
                     <img style={{position:'absolute',bottom:'-8%',right:'18%',opacity:0.5}} src="https://assets2.omise.co/assets/external-logo-a86debcb438f41aa395a868ff43fe67090e277d44dea080cd2d51baec405ea71.svg" width="30%"/>
                     <img style={{position:'absolute',bottom:'-9%',left:'18%',opacity:0.5}} src="https://lh4.googleusercontent.com/GycN66ZMw_Hz3JEmoHHeU4F3AlpnL2na3SXPHDLAPW5UlXuQU3yxbsKMBviOCpLT9FxM65QcDgmMcQ=w1600-h799" width="30%"/>
-                    <button style={{ width: '100%', marginTop: '20%' }} type="button" id="checkout-button" class="btn btn-primary" onClick={() => { this.checkOut() }}>จ่ายเงิน</button>
+                    <button style={{ width: '100%', marginTop: '20%' }} type="submit" value="Submit" id="checkout-button" class="btn btn-primary" onClick={() => { this.checkOut() }}>จ่ายเงิน</button>
+                    <input type="hidden" id="total" name="total" value={this.state.totaly}/>
                   </form>
 
                 </div>

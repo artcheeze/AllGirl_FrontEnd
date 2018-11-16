@@ -173,9 +173,9 @@ class ProductDetail extends Component {
 									<div>
 										<div style={{ position: 'absolute', top: '25%', left: '33%' }} class="loader"></div>
 
-										<div className="animated bounceInDown" style={{ position: 'fixed', width: '100%', zIndex: 15 }}>
-											<Header pic={this.props.pic} name={'รายละเอียดสินค้า'} />
-											<a style={{ position: 'fixed', zIndex: 13, fontSize: '40px', color: 'white', margin: '10px' }} onClick={() => this.setState({ clicked: true })}><FaArrowAltCircleLeft /></a>
+										<div  style={{ position: 'fixed', width: '100%', zIndex: 15 }}>
+											<Header pic={this.props.pic} name={<p class="animated bounceIn">รายละเอียดสินค้า</p>} />
+											<a className="animated bounceInDown" style={{ position: 'fixed', zIndex: 13, fontSize: '40px', color: 'white', margin: '10px' }} onClick={() => this.setState({ clicked: true })}><FaArrowAltCircleLeft /></a>
 										</div>
 
 										<div className="animated bounceInDown " >

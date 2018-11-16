@@ -26,7 +26,7 @@ class App extends Component {
         clicked: true
       })
 
-    }, 300)
+    }, 200)
 
   }
   componentDidMount() {
@@ -85,7 +85,7 @@ class App extends Component {
             :
             <div>
 
-              <Header name={'สินค้าทั้งหมด'} pic={this.props.pic} />
+              <Header name={<p class="animated bounceIn">สินค้าทั้งหมด</p>} pic={this.props.pic} />
 
 
               <div class="d-flex flex-wrap justify-content-center" style={{ marginBottom: '20%' }} >

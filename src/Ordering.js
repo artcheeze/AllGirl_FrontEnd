@@ -21,7 +21,7 @@ class Ordering extends Component {
 
   componentDidMount() {
 
-    fetch('http://localhost:8080/PromoCode').then(pc => pc.json()).then(pcj => {
+    fetch('https://localhost:8080/PromoCode').then(pc => pc.json()).then(pcj => {
       pcj.forEach(element => {
         this.setState({ promoCode: this.state.promoCode.concat(element) })
 
@@ -132,6 +132,7 @@ class Ordering extends Component {
           <AddAddress
             pic={this.props.pic}
             id={this.props.id}
+            email={this.props.email}
 
             total={this.state.total}
             code={this.state.code}
@@ -149,7 +150,7 @@ class Ordering extends Component {
             <div>
               {
                 this.state.clicked ?
-                  <Route path="/" component={() => <ProductDetail pic={this.props.pic} id={this.props.id} />} />
+                  <Route path="/" component={() => <ProductDetail email={this.props.email} pic={this.props.pic} id={this.props.id} />} />
                   :
                   <div>
                     <div style={{ position: 'fixed', width: '100%', zIndex: 15 }}>

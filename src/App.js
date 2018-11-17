@@ -31,10 +31,10 @@ class App extends Component {
   }
   componentDidMount() {
    
-      fetch('http://localhost:8080/Product').then(res => res.json()).then(j => {
+      fetch('https://localhost:8080/Product').then(res => res.json()).then(j => {
 
         j.forEach(e =>{
-          fetch('http://localhost:8080/productdetail/').then(ress => ress.json()).then(d => {
+          fetch('https://localhost:8080/ProductDetail/').then(ress => ress.json()).then(d => {
             d.forEach(dd=>{
 
               if(e.prodId === dd.prodId){
@@ -81,7 +81,7 @@ class App extends Component {
 
         {
           this.state.clicked ?
-            <Route path="/" component={() => <ProductDetail pic={this.props.pic} id={this.state.prodId} />} />
+            <Route path="/" component={() => <ProductDetail email={this.props.email} pic={this.props.pic} id={this.state.prodId} />} />
             :
             <div>
 

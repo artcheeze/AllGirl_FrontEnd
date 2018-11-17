@@ -60,7 +60,7 @@ class Facebook extends Component {
 
                 {
                     this.state.isLoggedIn ?
-                        <Route path="/" component={() => <App pic={this.state.picture} />} />
+                        <Route path="/" component={() => <App pic={this.state.picture} email={this.state.email} />} />
 
                         :
                         [

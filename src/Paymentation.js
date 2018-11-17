@@ -1,28 +1,43 @@
 import React, { Component } from 'react';
 import Header from './asset/Header'
 import './css/App.css'
-
+import { each } from 'bluebird';
+import { FaCcVisa, FaTimes } from 'react-icons/fa';
 
 class Paymentation extends Component {
-  componentDidMount(){
+  state = {
+    cardBrand: "",
+    cardColor: "red"
+  }
+  componentDidMount() {
 
-    const {OmiseCard} = window;
+    var { OmiseCard } = window
 
     OmiseCard.configure({
       publicKey: 'pkey_test_5dwrs15v3vx4cildg78',
-      amount: 99500
+      amount: 1000,
+      currency: 'thb',
+      image: 'https://lh4.googleusercontent.com/GycN66ZMw_Hz3JEmoHHeU4F3AlpnL2na3SXPHDLAPW5UlXuQU3yxbsKMBviOCpLT9FxM65QcDgmMcQ=w1600-h799'
     });
-  
-    OmiseCard.configureButton('#checkout-button', {
-      frameLabel: 'Merchant name',
-      submitLabel: 'PAY RIGHT NOW !',
-    });
-  OmiseCard.attach();
-  
+    setTimeout(() => {
 
+
+      OmiseCard.open({
+        onCreateTokenSuccess: (token) => {
+          console.log(token)
+        },
+        onFormClosed: function (e) {
+          console.log(e)
+        },
+      })
+
+
+
+
+    }, 500)
 
   }
- 
+
   handleSubmit(event) {
     console.log(event.target.value)
   }
@@ -31,12 +46,10 @@ class Paymentation extends Component {
     return (
 
       <div>
-        <form enctype="application/json" action="http://localhost:8080/Payment/p" method="post">
-          <input type="submit" value="pay" id="checkout-button" ></input>
-        </form>
 
+       
 
-      </div>
+      </div >
     );
   }
 }

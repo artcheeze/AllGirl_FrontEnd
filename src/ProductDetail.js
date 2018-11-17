@@ -30,7 +30,7 @@ class ProductDetail extends Component {
 	}
 
 	componentDidMount() {
-		fetch('http://localhost:8080/Product').then(ress => ress.json()).then(resJ => {
+		fetch('https://localhost:8080/Product').then(ress => ress.json()).then(resJ => {
 			for (var i = 0; i < resJ.length; i++) {
 				if (resJ[i].prodId === this.props.id) {
 					this.setState({
@@ -42,7 +42,7 @@ class ProductDetail extends Component {
 			}
 		}).then(() =>
 
-			fetch('http://localhost:8080/productdetail/').then(res => res.json()).then(j => {
+			fetch('https://localhost:8080/ProductDetail/').then(res => res.json()).then(j => {
 				j.forEach(e => {
 					if (e.prodId === this.props.id) {
 						this.setState({prodPic: e.prodImage})
@@ -71,14 +71,16 @@ class ProductDetail extends Component {
 
 
 		)
-		fetch('http://localhost:8080//ProductProperties').then(resp => resp.json()).then(jj => {
+		fetch('https://localhost:8080//ProductProperties').then(resp => resp.json()).then(jj => {
+			
 			var i = ""
 			var j = ""
 
 			jj.forEach(e => {
-
-				if (e.prodId.prodId === this.props.id) {
+				
+				if (e.prodId === this.props.id) {
 					i = e.prodColor
+					
 					if (i !== j) {
 						var color = (
 							<label style={{ backgroundColor: i, borderColor: i }} class="btn btn-success active">
@@ -153,7 +155,7 @@ class ProductDetail extends Component {
 
 				{
 					this.state.clicked ?
-						<Route path="/" component={() => <App pic={this.props.pic} />} />
+						<Route path="/" component={() => <App pic={this.props.pic} email={this.props.email} />} />
 
 						:
 
@@ -168,6 +170,7 @@ class ProductDetail extends Component {
 								prodPic={this.state.prodPic}
 								prodName={this.state.name}
 								prodPrice={this.state.price}
+								email={this.props.email}
 								/>
 								:
 									<div>

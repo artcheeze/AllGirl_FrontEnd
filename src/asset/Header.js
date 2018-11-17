@@ -27,7 +27,7 @@ class Header extends Component {
             this.props.pic === undefined ? 
             <FaUserSecret style={{fontSize:'35px',marginTop:'5px',marginRight:'10px'}}/>
             :
-            <img  class="rounded-circle" src={this.props.pic} alt="asdasd" />
+            <img  class="rounded-circle animated tada" src={this.props.pic} alt="asdasd" />
           }
            
           </div>

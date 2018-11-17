@@ -3,6 +3,8 @@ import Header from './asset/Header'
 import './css/AddAddress.css'
 import { FaArrowAltCircleLeft, FaExclamationCircle, FaAngleDoubleRight } from 'react-icons/fa';
 import Ordering from './Ordering';
+import { Route } from "react-router-dom";
+import App from './App';
 var { OmiseCard } = window
 
 
@@ -89,70 +91,95 @@ class AddAddress extends Component {
 
   done(){
     console.log('done')
+    fetch('https://localhost:8080/Orders/Mailing', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify({
+              name: this.props.prodName,
+              tal: this.props.total,
+              
+              qun: this.props.quantity,
+             
+              email: this.props.email
+
+            })
+          })
+          alert('ทางเราได้ส่งบิลไปที่ '+this.props.email+' แล้วค่ะ')
+          setTimeout(()=>{this.setState({paid:true})},2000)
   }
 
   render() {
     return (
-
       <div>
         {
-          this.state.cikBack ?
-            <Ordering
-            email={this.props.email}
-              pic={this.props.pic}
-              id={this.props.id}
-              prodPic={this.props.prodPic}
-              prodName={this.props.prodName}
-              prodPrice={this.props.prodPrice}
-              size={this.props.size}
-              color={this.props.color}
-            />
-            :
-            <div>
-              <div style={{ position: 'fixed', width: '100%', zIndex: 15 }}>
-                <Header pic={this.props.pic} name={<p class="animated bounceIn">ข้อมูลการจัดส่ง</p>} />
-                <a class="animated bounceInDown" style={{ position: 'fixed', zIndex: 13, fontSize: '40px', color: 'white', margin: '10px' }} onClick={() => this.setState({ cikBack: true })}><FaArrowAltCircleLeft /></a>
-              </div>
-
-              <div class="d-flex flex-wrap justify-content-center" style={{ marginBottom: '18%', backgroundColor: '#ededed' }} >
-
-              </div>
-
-              <div style={{ position: 'fixed', backgroundColor: '#ededed', width: '100%', height: '100%', color: 'black', padding: '15px' }} >
-                <div class="animated slideInRight">
-                  <div style={{ marginTop: '30px' }} class="form-group">
-                    <h4><FaAngleDoubleRight /> กรอกข้อมูล</h4>
-                    <p style={{ marginTop: '-10px' }} class="text-secondary">( ชื่อ บ้านเลขที่ รหัสไปรษณีย์ เบอร์โทร )</p>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" onChange={(e) => { this.setState({ address: e.target.value }) }}></textarea>
-                  </div>
-
-                  <p class="text-secondary"><FaExclamationCircle /> ระบบอยู่ระหว่างการพัฒนา - UX/UI อาจยังไม่สมบูรณ์ที่สุด และ ระบบยังไม่สามารถบันทึกที่อยู่ได้</p>
-                  <p class="text-secondary"><FaExclamationCircle /> เนื่องจากระบบยังไม่สมบูรณ์ที่สุด ทางเราไม่มีนโยบายเก็บข้อมูลบัตรของผู้ใช้งาน จะใช้การตัดเงินจากระบบตัวแทนภายนอกที่มีความปลอดภัยสูง เช่น Omise </p>
-
-
-
-                  <img style={{ position: 'absolute', bottom: '-8%', right: '35%', opacity: 0.5 }} src="https://assets2.omise.co/assets/external-logo-a86debcb438f41aa395a868ff43fe67090e277d44dea080cd2d51baec405ea71.svg" width="30%" />
-                  <button style={{ width: '100%', marginTop: '20%' }} class="btn btn-primary" onClick={() => { this.checkOut() }} >จ่ายเงิน</button>
-                  <input type="hidden" id="total" name="total" value={this.state.totaly} />
-
-
+          this.state.paid ? 
+          <Route path="/" component={() => <App pic={this.props.pic} email={this.props.email} />} />
+          :
+          <div>
+          {
+            this.state.cikBack ?
+              <Ordering
+              email={this.props.email}
+                pic={this.props.pic}
+                id={this.props.id}
+                prodPic={this.props.prodPic}
+                prodName={this.props.prodName}
+                prodPrice={this.props.prodPrice}
+                size={this.props.size}
+                color={this.props.color}
+              />
+              :
+              <div>
+                <div style={{ position: 'fixed', width: '100%', zIndex: 15 }}>
+                  <Header pic={this.props.pic} name={<p class="animated bounceIn">ข้อมูลการจัดส่ง</p>} />
+                  <a class="animated bounceInDown" style={{ position: 'fixed', zIndex: 13, fontSize: '40px', color: 'white', margin: '10px' }} onClick={() => this.setState({ cikBack: true })}><FaArrowAltCircleLeft /></a>
                 </div>
+  
+                <div class="d-flex flex-wrap justify-content-center" style={{ marginBottom: '18%', backgroundColor: '#ededed' }} >
+  
+                </div>
+  
+                <div style={{ position: 'fixed', backgroundColor: '#ededed', width: '100%', height: '100%', color: 'black', padding: '15px' }} >
+                  <div class="animated slideInRight">
+                    <div style={{ marginTop: '30px' }} class="form-group">
+                      <h4><FaAngleDoubleRight /> กรอกข้อมูล</h4>
+                      <p style={{ marginTop: '-10px' }} class="text-secondary">( ชื่อ บ้านเลขที่ รหัสไปรษณีย์ เบอร์โทร )</p>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" onChange={(e) => { this.setState({ address: e.target.value }) }}></textarea>
+                    </div>
+  
+                    <p class="text-secondary"><FaExclamationCircle /> ระบบอยู่ระหว่างการพัฒนา - UX/UI อาจยังไม่สมบูรณ์ที่สุด และ ระบบยังไม่สามารถบันทึกที่อยู่ได้</p>
+                    <p class="text-secondary"><FaExclamationCircle /> เนื่องจากระบบยังไม่สมบูรณ์ที่สุด ทางเราไม่มีนโยบายเก็บข้อมูลบัตรของผู้ใช้งาน จะใช้การตัดเงินจากระบบตัวแทนภายนอกที่มีความปลอดภัยสูง เช่น Omise </p>
+  
+  
+  
+                    <img style={{ position: 'absolute', bottom: '-8%', right: '35%', opacity: 0.5 }} src="https://assets2.omise.co/assets/external-logo-a86debcb438f41aa395a868ff43fe67090e277d44dea080cd2d51baec405ea71.svg" width="30%" />
+                    <button style={{ width: '100%', marginTop: '20%' }} class="btn btn-primary" onClick={() => { this.checkOut() }} >จ่ายเงิน</button>
+                    <input type="hidden" id="total" name="total" value={this.state.totaly} />
+  
+  
+                  </div>
+                </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
               </div>
+          }
+  
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-            </div>
         }
-
       </div>
+     
 
 
     );

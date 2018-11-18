@@ -21,7 +21,7 @@ class Ordering extends Component {
 
   componentDidMount() {
 
-    fetch('https://localhost:8080/PromoCode').then(pc => pc.json()).then(pcj => {
+    fetch('https://mgapi.ga/PromoCode').then(pc => pc.json()).then(pcj => {
       pcj.forEach(element => {
         this.setState({ promoCode: this.state.promoCode.concat(element) })
 

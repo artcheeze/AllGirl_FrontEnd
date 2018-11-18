@@ -31,10 +31,10 @@ class App extends Component {
   }
   componentDidMount() {
    
-      fetch('https://localhost:8080/Product').then(res => res.json()).then(j => {
+      fetch('https://mgapi.ga/Product', {insecure: true}).then(res => res.json()).then(j => {
 
         j.forEach(e =>{
-          fetch('https://localhost:8080/ProductDetail/').then(ress => ress.json()).then(d => {
+          fetch('https://mgapi.ga/ProductDetail/', {insecure: true}).then(ress => ress.json()).then(d => {
             d.forEach(dd=>{
 
               if(e.prodId === dd.prodId){

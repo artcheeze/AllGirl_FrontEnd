@@ -43,7 +43,7 @@ class AddAddress extends Component {
       frameLabel: 'Mustache.Girls',
       amount: this.state.totaly,
       onCreateTokenSuccess: (token) => {
-        fetch('https://localhost:8080/Payment', {
+        fetch('https://mgapi.ga/Payment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ class AddAddress extends Component {
         }).then((res) => { 
           console.log(this.state.address)
           if(res.ok){
-             fetch('https://localhost:8080/Orders/addOrder', {
+             fetch('https://mgapi.ga/Orders/addOrder', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json;charset=utf-8'
@@ -91,7 +91,7 @@ class AddAddress extends Component {
 
   done(){
     console.log('done')
-    fetch('https://localhost:8080/Orders/Mailing', {
+    fetch('https://mgapi.ga/Orders/Mailing', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json;charset=utf-8'

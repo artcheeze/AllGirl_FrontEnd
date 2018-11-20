@@ -64,7 +64,8 @@ class AddAddress extends Component {
               quantity: this.props.quantity,
               paymentStatus: "Paid",
               address: this.state.address,
-              email: this.props.email
+              email: this.props.email,
+              orderId: this.props.orderId
 
             })
           }).then(res => {
@@ -102,12 +103,13 @@ class AddAddress extends Component {
               
               qun: this.props.quantity,
              
-              email: this.props.email
+              email: this.props.email,
+              id: this.props.orderId
 
             })
           })
           alert('ทางเราได้ส่งบิลไปที่ '+this.props.email+' แล้วค่ะ')
-          setTimeout(()=>{this.setState({paid:true})},2000)
+          setTimeout(()=>{this.setState({paid:true})},1000)
   }
 
   render() {

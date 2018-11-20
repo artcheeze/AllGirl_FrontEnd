@@ -15,6 +15,8 @@ class Ordering extends Component {
     discount: 0,
     total: 0,
     discountState: "",
+    
+    orderId: 0,
 
     goCheckOut: false
   }
@@ -31,6 +33,11 @@ class Ordering extends Component {
     setTimeout(() => {
       this.setState({ total: this.state.sumPrice })
     }, 200)
+
+    fetch('https://mgapi.ga/Orders').then(orderRes => orderRes.json()).then(order => {
+
+     this.setState({ orderId: order[order.length-1].orderId+1})
+    })
   }
 
   QuantityManage(val) {
@@ -134,6 +141,7 @@ class Ordering extends Component {
             id={this.props.id}
             email={this.props.email}
 
+            orderId={this.state.orderId}
             total={this.state.total}
             code={this.state.code}
             quantity={this.state.quantity}
@@ -169,6 +177,7 @@ class Ordering extends Component {
                         <img class="card-img-top" id="imgAppCard" src={this.props.prodPic} />
                         <div class="card-body">
                           <div style={{ position: 'absolute', marginTop: '-25%' }}><span class="badge badge-secondary">ขนาด : {this.props.size}</span><br /><span class="badge badge-secondary">สี : {this.props.color}</span></div>
+                          <div class="text-center shadow-sm " style={{backgroundColor:'#6c757d',color:'white',width:'50%',padding:'1%',borderRadius:'40px',position:'absolute',top:'32%',left:'23%'}}>เลขที่ใบสั่งซื้อ 00{this.state.orderId}</div>
                           <h4 class="card-title text-secondary " style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{this.props.prodName}</h4>
 
 

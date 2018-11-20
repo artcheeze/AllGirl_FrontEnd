@@ -30,7 +30,7 @@ class App extends Component {
 
   }
   componentDidMount() {
-   
+    console.log("%c Develop by [ หญิงล้วน ป่วนมฤตยู ปี 3 ] ", "background:#F65058;padding: 10px; border-radius: 10px; color: white; font-size: 20px");
       fetch('https://mgapi.ga/Product', {insecure: true}).then(res => res.json()).then(j => {
 
         j.forEach(e =>{
@@ -84,8 +84,11 @@ class App extends Component {
             <Route path="/" component={() => <ProductDetail email={this.props.email} pic={this.props.pic} id={this.state.prodId} />} />
             :
             <div>
+              <div class="animated bounceInDown">
 
-              <Header name={<p class="animated bounceIn">สินค้าทั้งหมด</p>} pic={this.props.pic} />
+                 <Header name={<p class="animated bounceIn">สินค้าทั้งหมด</p>} pic={this.props.pic} />
+              </div>
+             
 
 
               <div class="d-flex flex-wrap justify-content-center" style={{ marginBottom: '20%' }} >
